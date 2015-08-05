@@ -81,3 +81,16 @@ test "splice", (p_test) ->
 	p_test.ok typedArray[1].data.bang is "4", "`typedArray[1]` has a `data.bang` property equal to `4`"
 
 	p_test.end()
+
+test "transform", (p_test) ->
+	transform = (p_value) ->
+		p_value.index++
+		return p_value
+
+	typedArray = new TypedArray TestClass, transform, [{ index: 1 }, { index: 2 }, { index: 3 }]
+
+	p_test.equals typedArray[0].data.index, 2
+	p_test.equals typedArray[1].data.index, 3
+	p_test.equals typedArray[2].data.index, 4
+
+	p_test.end()
