@@ -94,3 +94,19 @@ test "transform", (p_test) ->
 	p_test.equals typedArray[2].data.index, 4
 
 	p_test.end()
+
+test "to and toArray", (p_test) ->
+	typedArray = new TypedArray TestClass, [{ index: 1 }, { index: 2 }, { index: 3 }]
+
+	for method in ["to", "toArray"]
+		array = typedArray[method]()
+
+		p_test.true isArray array
+		p_test.equals typedArray.length, array.length
+		p_test.equals typedArray.length[0], array.length[0]
+		p_test.equals typedArray.length[typedArray.length - 1], array.length[array.length - 1]
+		p_test.equals array[0].data.index, 1
+		p_test.equals array[1].data.index, 2
+		p_test.equals array[2].data.index, 3
+
+	p_test.end()
