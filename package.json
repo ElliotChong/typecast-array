@@ -2,7 +2,7 @@
 	"name": "typecast-array",
 	"description": "Automatically cast configuration Objects into complex data types through normal Array operations like push, unshift, and more!",
 	"license": "MIT",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"author": [
 		"Elliot Chong <code+typecast-array@elliotjameschong.com>"
 	],
