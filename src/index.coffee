@@ -34,6 +34,8 @@ class TypedArray extends Array
 
 		# Alias methods
 		@fromArray = @from
+		@toArray = @to
+
 		@from p_array
 
 	from: (p_array) ->
@@ -55,6 +57,10 @@ class TypedArray extends Array
 		@push value for value in p_array
 
 		return @
+
+	to: ->
+		for item in @
+			item
 
 	add: ->
 		@push.apply @, arguments
