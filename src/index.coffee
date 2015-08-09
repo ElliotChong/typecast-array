@@ -32,6 +32,8 @@ class TypedArray extends Array
 		@transform = p_transform
 		@type = p_type
 
+		# Alias methods
+		@fromArray = @from
 		@from p_array
 
 	from: (p_array) ->
